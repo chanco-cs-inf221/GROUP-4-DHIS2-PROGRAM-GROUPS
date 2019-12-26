@@ -9,7 +9,7 @@ const apiVersion = 30;
 const developmentServer = 'https://cors-anywhere.herokuapp.com/https://play.dhis2.org/dev';
 //const server = 'http://www.mocky.io/v2/5e00e11f2f00004b0013b796'
 //https://play.dhis2.org/dev/api/programs
-const server = 'https://play.dhis2.org/dev/'
+const server = 'https://play.dhis2.org/dev'
 const rootElement = document.getElementById('root');
 
 const withBaseUrl = baseUrl => {
