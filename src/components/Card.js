@@ -1,20 +1,34 @@
-import React from 'react';
+//import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, row, col, Container } from 'react-bootstrap'
-import './CardStyle.css';
+import { Card } from 'react-bootstrap'
+import Typography from '@material-ui/core/Typography';
+
+import Search from '../components/Search';
+
+
+import React from 'react'
 
 const Commodities = ({ commodities }) => {
+
+  console.log(commodities)
   return (
-<div>
-    <div className="wrap">
+    <div>
+      <center><h1>Contact List</h1></center>
+      <input  placeholder = "search programs"  />
+
       {commodities.map((commodity) => (     
-        <div className="box one">
-    <h1>{commodity.displayName}</h1>
-  </div>
+        <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src="holder.js/100px180" />
+          <Card.Body>
+            <Card.Title>{commodity.displayName}</Card.Title>
+            <Card.Text>
+            {commodity.displayName}
+            </Card.Text>
+          </Card.Body>
+        </Card>
         
         ))}
-  </div>
-</div>
+    </div>
   )
 };
 

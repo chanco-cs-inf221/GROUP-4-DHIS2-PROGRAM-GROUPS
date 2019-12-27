@@ -2,10 +2,12 @@ import React, { Component, Fragment } from 'react';
 import logo from '../logo.png';
 import Api from '../api';
 import './App.css';
+import Navbar from './Navbar';
+
 import Card from './Card';
 import Footer from './Footer';
 import Commodities from './Card';
-import AppNav from './AppNav'
+import Search from '../components/Search';
 
 
 class App extends Component {
@@ -13,6 +15,7 @@ class App extends Component {
         super(props);
 
         this.state = {
+            filter: "",
             commodities: [],
             
         };
@@ -23,17 +26,33 @@ class App extends Component {
             this.setState({
             commodities : data.programs})
         })
+
+        
     }
 
-    render() {
-        return (
-            <div>
-            <AppNav/>
-                <Card commodities={this.state.commodities}/>
+    handleChange = event => {
+        this.setState({ filter: event.target.value });
+      };
 
+    render() {
+        const { filter, commodities } = this.state;
+        
+        
+        console.log(commodities);
+
+        return (
+            
+            <Fragment>
+              
+                <Navbar/>
+            
+                {/* <Card commodities={this.state.commodities}/> */}
+                <Search staff={commodities}/>
+
+            
                 <Footer/>
                 
-            </div>
+            </Fragment>
 
         );
     }
